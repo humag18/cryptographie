@@ -1,6 +1,6 @@
 # Cryptographie
 ## Cryptosystème 
-### Base d'openssl
+### Chiffrement symétrique
 Pour chiffrer -> ```$ openssl enc -<cryptosystème> -in <plaintext_file> [-out <ciphertext_file>] -e```
 
 Pour déchiffrer -> ```$ openssl enc -<cryptosystème> -in <plaintext_file> [-out <ciphertext_file>] -d```
@@ -9,6 +9,7 @@ Les options -d et -e veulent respectivement dire decrypt et encrypt
 
 Création de clé hexadecimal random ```openssl -rand hex 20``` 20 étant le nombre de bit que fera la clé ou l'iv
 
+#### Fonctionnement du vecteur initial 
 Chiffrement de données avec clé ```openssl enc -aes128-cbc -k <key> -iv <iv> -in <plaintext_file> -out <cyphertext_file>```
 
 >L'iv ne se met uniquement lors d'un chiffrement par bloc tel que cbc
@@ -18,13 +19,20 @@ Chiffrement de données avec clé ```openssl enc -aes128-cbc -k <key> -iv <iv> -
 ```ls -l ``` == voir les fichier et leurs tailles
 
 suppression des octets du padding automatique avec openssl mais si on ne veut pas les supprimer ```-nopad```
-
+### Chiffrement asymétrique
 Pour générer une Private key ```openssl genrsa -out <file> <taille>
-
->la taille s'exprime en bit
 
 >```openssl rsa -in <file> -text -noout``` permet de voir les infos de la clé ```-text``` affiches les composante & les infos publique de la clé ```-noout``  supprime l'affichage de la clé chiffré
 
-Génération de la clé publique ```openssl rsa -in <fichier clé priv> -pubout -out <fichier clé publique>```
+Génération de la clé publique associé à la clé privée ```openssl rsa -in <fichier clé priv> -pubout -out <fichier clé publique>```
    
->Pour visualier les infos relative à la clé ```openssl rsa -in <fichier clé public> -pubin -text -noout
+>Pour visualier les infos relative à la clé ```openssl rsa -in <fichier clé public> -pubin -text -noout```
+
+Le chiffrement des données avec le RSA se fait avec la commande ```openssl rsautl -encrypt -in <fichier_entree> -pubin -inkey <clé> -out
+<fichier_sortie>```
+   
+### Hachage de données
+Pour hacher un fichier ```openssl dgst -<algorithme de hachage> <file.txt>``` ceci génère directement l'empreinte du fichier
+   
+pour stocker l'empreinte dans un fichier utiliser la commande ```openssl dgst <algo> -out <file.txt.alog> <file.txt>``` 
+   > file.txt.algo = fichier de reception de l'empreinte
