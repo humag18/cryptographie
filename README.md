@@ -1,4 +1,4 @@
-# cryptographie
+# Cryptographie
 ## Cryptosystème 
 ### Base d'openssl
 Pour chiffrer -> ```$ openssl enc -<cryptosystème> -in <plaintext_file> [-out <ciphertext_file>] -e```
@@ -24,3 +24,7 @@ Pour générer une Private key ```openssl genrsa -out <file> <taille>
 >la taille s'exprime en bit
 
 >```openssl rsa -in <file> -text -noout``` permet de voir les infos de la clé ```-text``` affiches les composante & les infos publique de la clé ```-noout``  supprime l'affichage de la clé chiffré
+
+Génération de la clé publique ```openssl rsa -in <fichier clé priv> -pubout -out <fichier clé publique>```
+   
+>Pour visualier les infos relative à la clé ```openssl rsa -in <fichier clé public> -pubin -text -noout
