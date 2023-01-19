@@ -46,4 +46,9 @@ Les différents algos de hachage
    - SHA-512
    -SHA3-224/256/384/512
    
+### Signature de fichier
+   Pour signer un fichier avec une clé RSA ```openssl rsautl -sign -in <fichier_empreinte> -inkey <cle> -out <signature>```
+   > ```openssl rsautl -verify -in <signature> -pubin -inkey <cle> -out <f_empreinte>``` cette commande permet de vérifier si la signature est bonne
+   
+###  Les clés de session
    
