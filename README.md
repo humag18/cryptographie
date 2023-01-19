@@ -36,3 +36,14 @@ Pour hacher un fichier ```openssl dgst -<algorithme de hachage> <file.txt>``` ce
    
 pour stocker l'empreinte dans un fichier utiliser la commande ```openssl dgst <algo> -out <file.txt.alog> <file.txt>``` 
    > file.txt.algo = fichier de reception de l'empreinte
+   
+Les différents algos de hachage
+   - MD5 -> pas très sécu
+   - SHA-1 -> peu sur
+   - SHA-224
+   - SHA-256
+   - SHA-384
+   - SHA-512
+   -SHA3-224/256/384/512
+   
+   
