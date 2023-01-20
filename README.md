@@ -44,7 +44,7 @@ Les différents algos de hachage
    - SHA-256
    - SHA-384
    - SHA-512
-   -SHA3-224/256/384/512
+   - SHA3-224/256/384/512
    
 ### Signature de fichier
    Pour signer un fichier avec une clé RSA ```openssl rsautl -sign -in <fichier_empreinte> -inkey <cle> -out <signature>```
