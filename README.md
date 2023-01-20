@@ -55,6 +55,5 @@ Les différents algos de hachage
    
    Connection à une adresse mail ou création avec mailfence
    
-   Générer la clé PGP dans les paeamètres de thunderbird
-   
+   Générer la clé PGP dans les paeamètres de thunderbird dans les paramètres de compte aller dans ```End-To-End Encryption``` 
    
