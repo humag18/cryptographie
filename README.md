@@ -50,5 +50,11 @@ Les différents algos de hachage
    Pour signer un fichier avec une clé RSA ```openssl rsautl -sign -in <fichier_empreinte> -inkey <cle> -out <signature>```
    > ```openssl rsautl -verify -in <signature> -pubin -inkey <cle> -out <f_empreinte>``` cette commande permet de vérifier si la signature est bonne
    
-###  Les clés de session
+## PGP
+   Installer thunderbird et pgpdump ```sudo apt install thunderbird pgpdump```
+   
+   Connection à une adresse mail ou création avec mailfence
+   
+   Générer la clé PGP dans les paeamètres de thunderbird
+   
    
